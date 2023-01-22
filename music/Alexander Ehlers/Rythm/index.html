@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<meta charset="utf-8">
+<link href="../../../MechatronicBeing/media-player/media-player.css" rel="stylesheet">
+<link href="../../../MechatronicBeing/media-player/playlist.css" rel="stylesheet">
+<script src="../../../MechatronicBeing/media-player/playlist.js"></script>
+<script src="../../../MechatronicBeing/media-player/media-player.js"></script>
+
+<svg style="display:none">
+	<symbol id="symbol-play" viewBox="0 0 32 32">
+		<path d="M4 0l24 16L4 32"/>
+	</symbol>
+	<symbol id="symbol-pause" viewBox="0 0 32 32">
+		<path d="M4 0h9v32H4M28 0h-9v32h9"/>
+	</symbol>
+	<symbol id="symbol-mute" viewBox="0 0 32 32">
+		<path d="M0 11h6l10-8.5v27L6 21H0M22 6l10 10-10 10"/>
+	</symbol>
+	<symbol id="symbol-unmute" viewBox="0 0 32 32">
+		<path d="M0 11h6l10-8.5v27L6 21H0"/>
+	</symbol>
+	<symbol id="symbol-download" viewBox="0 0 32 32">
+		<path d="M20 2v12h4l-8 10-8-10h4V2M0 21h5v6h22v-6h5v11H0"/>
+	</symbol>
+	<symbol id="symbol-enterFullscreen" viewBox="0 0 32 32">
+		<path d="M0 0h12L8 4l6 6-4 4-6-6-4 4M32 0H20l4 4-6 6 4 4 6-6 4 4M0 32V20l4 4 6-6 4 4-6 6 4 4m20 0V20l-4 4-6-6-4 4 6 6-4 4"/>
+	</symbol>
+	<symbol id="symbol-leaveFullscreen" viewBox="0 0 32 32">
+		<path d="M0 4l4-4 6 6 4-4v12H2l4-4m26-6l-4-4-6 6-4-4v12h12l-4-4M0 28l4 4 6-6 4 4V18H2l4 4m26 6l-4 4-6-6-4 4V18h12l-4 4"/>
+	</symbol>
+</svg>
+
+<main>
+	<video controls data-options='{"prefix":"media","show":{"volume":false,"fullscreen":false},"lang":{"currentTime":"current time","minutes":"minutes","mute":"mute","play":"play","remainingTime":"remaining time","seconds":"seconds","volume":"volume"}}'></video>
+	<ul class="play-list">
+		<li class="play-item"><a class="play-link" href="ascend_130bpm.mp3">ascend_130bpm</a></li>
+		<li class="play-item"><a class="play-link" href="bow_for_me_157bpm.mp3">bow_for_me_157bpm</a></li>
+		<li class="play-item"><a class="play-link" href="celebration_and_fear_190bpm.mp3">celebration_and_fear_190bpm</a></li>
+		<li class="play-item"><a class="play-link" href="drama_130bpm.mp3">drama_130bpm</a></li>
+		<li class="play-item"><a class="play-link" href="extended_120bpm.mp3">extended_120bpm</a></li>
+		<li class="play-item"><a class="play-link" href="flying_temple_128bpm.mp3">flying_temple_128bpm</a></li>
+		<li class="play-item"><a class="play-link" href="glory_days_184bpm.mp3">glory_days_184bpm</a></li>
+		<li class="play-item"><a class="play-link" href="logic_or_emotions_151bpm.mp3">logic_or_emotions_151bpm</a></li>
+		<li class="play-item"><a class="play-link" href="lost_utopia_127bpm.mp3">lost_utopia_127bpm</a></li>
+		<li class="play-item"><a class="play-link" href="mental_corruption_150bpm.mp3">mental_corruption_150bpm</a></li>
+		<li class="play-item"><a class="play-link" href="passing_timeline_176bpm.mp3">passing_timeline_176bpm</a></li>
+		<li class="play-item"><a class="play-link" href="psychic_190bpm.mp3">psychic_190bpm</a></li>
+		<li class="play-item"><a class="play-link" href="ripped_apart_174bpm.mp3">ripped_apart_174bpm</a></li>
+		<li class="play-item"><a class="play-link" href="starting_over_122bpm.mp3">starting_over_122bpm</a></li>
+		<li class="play-item"><a class="play-link" href="stomper_160bpm.mp3">stomper_160bpm</a></li>
+		<li class="play-item"><a class="play-link" href="t.o.e_120bpm.mp3">t.o.e_120bpm</a></li>
+		<li class="play-item"><a class="play-link" href="the_lab_144bpm.mp3">the_lab_144bpm</a></li>
+		<li class="play-item"><a class="play-link" href="vessel_of_eternity_150bpm.mp3">vessel_of_eternity_150bpm</a></li>
+		<li class="play-item"><a class="play-link" href="whats_cooking_190bpm.mp3">whats_cooking_190bpm</a></li>
+		<li class="play-item"><a class="play-link" href="zen_devils_205bpm.mp3">zen_devils_205bpm</a></li>
+	</ul>
+</main>
+
+<section id="music">
+	<p>
+    <b><u>MUSIC</u></b><br>
+		<b>Author :</b> Alexander Ehlers ("tricksntraps")<br>
+    <b>License :</b> <a href="https://creativecommons.org/publicdomain/zero/1.0/">Creative Commons CC0 Public Domain Dedication</a><br>
+    <b>Sources :</b> <a href="https://opengameart.org/users/tricksntraps">https://opengameart.org/users/tricksntraps</a><br>
+    <b>Note :</b> Music converted by <a href="https://github.com/MechatronicBeing/">MechatronicBeing</a> -see Sources for originals-
+	</p>
+</section>
+
+<section id="mediaplayer">
+	<p>
+    <b><u>MEDIA PLAYER</u></b><br>
+    <b>Author :</b> <a href="https://github.com/jonathantneal/">Jonathan Neal</a><br>
+    <b>License :</b> CC0 "No Rights Reserved"<br>
+    <b>Sources :</b> <a href="https://github.com/jonathantneal/media-player">Original version</a> / <a href="../../../MechatronicBeing/media-player/">MechatronicBeing's modifications</a>
+	</p>
+</section>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<meta charset="utf-8">
+<link href="../../../MechatronicBeing/media-player/media-player.css" rel="stylesheet">
+<link href="../../../MechatronicBeing/media-player/playlist.css" rel="stylesheet">
+<script src="../../../MechatronicBeing/media-player/playlist.js"></script>
+<script src="../../../MechatronicBeing/media-player/media-player.js"></script>
+
+<svg style="display:none">
+	<symbol id="symbol-play" viewBox="0 0 32 32">
+		<path d="M4 0l24 16L4 32"/>
+	</symbol>
+	<symbol id="symbol-pause" viewBox="0 0 32 32">
+		<path d="M4 0h9v32H4M28 0h-9v32h9"/>
+	</symbol>
+	<symbol id="symbol-mute" viewBox="0 0 32 32">
+		<path d="M0 11h6l10-8.5v27L6 21H0M22 6l10 10-10 10"/>
+	</symbol>
+	<symbol id="symbol-unmute" viewBox="0 0 32 32">
+		<path d="M0 11h6l10-8.5v27L6 21H0"/>
+	</symbol>
+	<symbol id="symbol-download" viewBox="0 0 32 32">
+		<path d="M20 2v12h4l-8 10-8-10h4V2M0 21h5v6h22v-6h5v11H0"/>
+	</symbol>
+	<symbol id="symbol-enterFullscreen" viewBox="0 0 32 32">
+		<path d="M0 0h12L8 4l6 6-4 4-6-6-4 4M32 0H20l4 4-6 6 4 4 6-6 4 4M0 32V20l4 4 6-6 4 4-6 6 4 4m20 0V20l-4 4-6-6-4 4 6 6-4 4"/>
+	</symbol>
+	<symbol id="symbol-leaveFullscreen" viewBox="0 0 32 32">
+		<path d="M0 4l4-4 6 6 4-4v12H2l4-4m26-6l-4-4-6 6-4-4v12h12l-4-4M0 28l4 4 6-6 4 4V18H2l4 4m26 6l-4 4-6-6-4 4V18h12l-4 4"/>
+	</symbol>
+</svg>
+
+<main>
+	<video controls data-options='{"prefix":"media","show":{"volume":false,"fullscreen":false},"lang":{"currentTime":"current time","minutes":"minutes","mute":"mute","play":"play","remainingTime":"remaining time","seconds":"seconds","volume":"volume"}}'></video>
+	<ul class="play-list">
+		<li class="play-item"><a class="play-link" href="ai_fight_120bpm.mp3">ai_fight_120bpm</a></li>
+		<li class="play-item"><a class="play-link" href="Anti Matter Magic.mp3">Anti Matter Magic</a></li>
+		<li class="play-item"><a class="play-link" href="Caves.mp3">Caves</a></li>
+		<li class="play-item"><a class="play-link" href="Currents.mp3">Currents</a></li>
+		<li class="play-item"><a class="play-link" href="electric_stream_180bpm.mp3">electric_stream_180bpm</a></li>
+		<li class="play-item"><a class="play-link" href="Experiment G.mp3">Experiment G</a></li>
+		<li class="play-item"><a class="play-link" href="jumping_cyborg_110bpm.mp3">jumping_cyborg_110bpm</a></li>
+		<li class="play-item"><a class="play-link" href="new_factory_129bpm.mp3">new_factory_129bpm</a></li>
+		<li class="play-item"><a class="play-link" href="night_club_chill_100bpm.mp3">night_club_chill_100bpm</a></li>
+		<li class="play-item"><a class="play-link" href="Simulation Unknown.mp3">Simulation Unknown</a></li>
+		<li class="play-item"><a class="play-link" href="Space Collisions.mp3">Space Collisions</a></li>
+		<li class="play-item"><a class="play-link" href="strange_experiments_80bpm.mp3">strange_experiments_80bpm</a></li>
+		<li class="play-item"><a class="play-link" href="system_overload_154bpm.mp3">system_overload_154bpm</a></li>
+		<li class="play-item"><a class="play-link" href="Test Subject.mp3">Test Subject</a></li>
+		<li class="play-item"><a class="play-link" href="the_casino_120bpm.mp3">the_casino_120bpm</a></li>
+		<li class="play-item"><a class="play-link" href="through_the_sewers_1766bpm.mp3">through_the_sewers_1766bpm</a></li>
+		<li class="play-item"><a class="play-link" href="Tribal Chaos.mp3">Tribal Chaos</a></li>
+		<li class="play-item"><a class="play-link" href="welcome_mix_110bpm.mp3">welcome_mix_110bpm</a></li>
+		<li class="play-item"><a class="play-link" href="Wicked beast.mp3">Wicked beast</a></li>
+	</ul>
+</main>
+
+<section id="music">
+	<p>
+    <b><u>MUSIC</u></b><br>
+		<b>Author :</b> Alexander Ehlers ("tricksntraps")<br>
+    <b>License :</b> <a href="https://creativecommons.org/publicdomain/zero/1.0/">Creative Commons CC0 Public Domain Dedication</a><br>
+    <b>Sources :</b> <a href="https://opengameart.org/users/tricksntraps">https://opengameart.org/users/tricksntraps</a><br>
+    <b>Note :</b> Music converted by <a href="https://github.com/MechatronicBeing/">MechatronicBeing</a> -see Sources for originals-
+	</p>
+</section>
+
+<section id="mediaplayer">
+	<p>
+    <b><u>MEDIA PLAYER</u></b><br>
+    <b>Author :</b> <a href="https://github.com/jonathantneal/">Jonathan Neal</a><br>
+    <b>License :</b> CC0 "No Rights Reserved"<br>
+    <b>Sources :</b> <a href="https://github.com/jonathantneal/media-player">Original version</a> / <a href="../../../MechatronicBeing/media-player/">MechatronicBeing's modifications</a>
+	</p>
+</section>
