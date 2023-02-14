@@ -1,0 +1,17 @@
+﻿- **Title** : "Create pkZip files with javaScript"
+- **Author** : pwasystem 
+- **License** : "The Unlicense"
+- **Website** : https://github.com/pwasystem/zip/  
+- **For** : @MechatronicBeing  
+- **WARNING** : this library only merge the files, apply no compression on them !!!! The size will stay the same.
+- **Modifications** :  
+  - adding a html "test" page.
+  - in "zip.js"  
+    - adding a "file-counter"  
+      - line "this.filesCount = 0;" in constructor  
+      - lines "this.filesCount++;" in fecth2zip, str2zip and files2zip methods  
+      - added "filesCounted..." function (return this.filesCount)  
+      - WHY ???  
+        - "fecth2zip" use asynchronous fetch to get the files !  
+        - SO : need to wait for all files to be loaded, ELSE making the zip will create a fake zip.  
+        - it's very important to control the "filesCount" to verify that all files are loaded, before making the zip
