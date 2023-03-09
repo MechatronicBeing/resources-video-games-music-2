@@ -59,23 +59,6 @@ echo "<div id=\"_footer\" style=\"position: absolute; bottom: 0; width: 100%; he
 
 echo "</div> <!-- _bodyContainer -->" >> "$categoryPath/$targetDir/$pagesFilesHTMLFilename"
 
-#Add principal script to add data
-echo "<script src=\"$showedRelativeFinalTarget/$dataPath/$dataFilesJSfile\"></script>" >> "$categoryPath/$targetDir/$pagesFilesHTMLFilename"
-
-#REWORK THIS : SCRIPT/ADD SCRIPT : not the idea !
-# #For each directory, starting with the same name
-# for D in $categoryName*; do
-  # #If D is a directory AND NOT the current folder (DONE BEFORE)
-  # if [[ -d "$D" && "$D" != "$categoryName" ]]; then
-    # #JS : add a script tag for creating a , for loading a js script WHEN NEEDED !
-    # echo "<script>" >> "$categoryPath/$targetDir/$pagesFilesHTMLFilename"
-    # echo "  var newScript = document.createElement('script');" >> "$categoryPath/$targetDir/$pagesFilesHTMLFilename"
-    # echo "  newScript.src = \"$showedRelativeFinalTarget/$D/$dataPath/$dataFilesJSfile\";" >> "$categoryPath/$targetDir/$pagesFilesHTMLFilename"
-    # echo "  document.getElementsByTagName('head')[0].appendChild(newScript);" >> "$categoryPath/$targetDir/$pagesFilesHTMLFilename"
-    # echo "</script>" >> "$categoryPath/$targetDir/$pagesFilesHTMLFilename"
-  # fi
-# done
-
 #JS : Add zip.js script
 echo "<script src=\"$showedRelativeFinalTarget/$zipScriptTarget/zip.js\"></script>" >> "$categoryPath/$targetDir/$pagesFilesHTMLFilename"
 echo "" >> "$categoryPath/$targetDir/$pagesFilesHTMLFilename"
@@ -83,18 +66,21 @@ echo "" >> "$categoryPath/$targetDir/$pagesFilesHTMLFilename"
 #JS : add multiples JS functions...
 echo "<script>" >> "$categoryPath/$targetDir/$pagesFilesHTMLFilename"
 
-echo "var markedCheckboxes = [];" >> "$categoryPath/$targetDir/$pagesFilesHTMLFilename"
-echo "var checkboxes = document.querySelectorAll('input[type=\"checkbox\"]');" >> "$categoryPath/$targetDir/$pagesFilesHTMLFilename"
-echo "for(var i=0;i<checkboxes.length;i++) {" >> "$categoryPath/$targetDir/$pagesFilesHTMLFilename"
-echo "  checkboxes[i].disabled=false;" >> "$categoryPath/$targetDir/$pagesFilesHTMLFilename"
+# echo "var markedCheckboxes = [];" >> "$categoryPath/$targetDir/$pagesFilesHTMLFilename"
+# echo "var checkboxes = document.querySelectorAll('input[type=\"checkbox\"]');" >> "$categoryPath/$targetDir/$pagesFilesHTMLFilename"
+# echo "for(var i=0;i<checkboxes.length;i++) {" >> "$categoryPath/$targetDir/$pagesFilesHTMLFilename"
+# echo "  checkboxes[i].disabled=false;" >> "$categoryPath/$targetDir/$pagesFilesHTMLFilename"
+# echo "}" >> "$categoryPath/$targetDir/$pagesFilesHTMLFilename"
+
+echo "function loadData(scriptPath, executeFunction) {" >> "$categoryPath/$targetDir/$pagesFilesHTMLFilename"
+echo "  var newScript = document.createElement('script');" >> "$categoryPath/$targetDir/$pagesFilesHTMLFilename"
+echo "  newScript.src = scriptPath;" >> "$categoryPath/$targetDir/$pagesFilesHTMLFilename"
+echo "  newScript.type = \"text/javascript\";" >> "$categoryPath/$targetDir/$pagesFilesHTMLFilename"
+echo "  newScript.async = true;" >> "$categoryPath/$targetDir/$pagesFilesHTMLFilename"
+echo "  document.body.appendChild(newScript);" >> "$categoryPath/$targetDir/$pagesFilesHTMLFilename"
+echo "  newScript.addEventListener(\"load\", () => {console.log(scriptPath+' loaded.'); var fn = window[executeFunction]; if (typeof fn === \"function\") fn(); });" >> "$categoryPath/$targetDir/$pagesFilesHTMLFilename"
 echo "}" >> "$categoryPath/$targetDir/$pagesFilesHTMLFilename"
-
-
-# #get the function name in JS ('-' does not working as function name)
-# categoryNameInJS="${categoryName//-/_}"
-# #Line to execute the function when page is loaded.
-# echo "${categoryNameInJS}_writeData();" >> "$categoryPath/$targetDir/$pagesFilesHTMLFilename"
-# echo "" >> "$categoryPath/$targetDir/$pagesFilesHTMLFilename"
+echo "" >> "$categoryPath/$targetDir/$pagesFilesHTMLFilename"
 
 #JS : Add changeCheckedItems() (when a checkbox is clicked)
 echo "function changeCheckedItems(idCheckbox) {" >> "$categoryPath/$targetDir/$pagesFilesHTMLFilename"

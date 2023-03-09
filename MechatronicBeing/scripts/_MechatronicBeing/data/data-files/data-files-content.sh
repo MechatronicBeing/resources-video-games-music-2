@@ -83,7 +83,7 @@ currentNumLine=0
 #Create the -special!- JS datafile 
 rowParameterNameInJSFunction="aRow"
 insertCellLine=""
-for((i=0;i<7;i++)); do 
+for((i=0;i<8;i++)); do 
   insertCellLine="${insertCellLine}${rowParameterNameInJSFunction}.insertCell();"
 done
 functionNameInJS="${categoryName//-/_}"
@@ -304,6 +304,7 @@ showLineInformation()
   echo "if (currentRow === null) { " >> "${categoryPath}/${dataPath}/${dataFilesJSfile}"
   echo "  currentRow = currentTbody.insertRow(-1);" >> "${categoryPath}/${dataPath}/${dataFilesJSfile}" 
   echo "  currentRow.id = 'tr_${itemId}_';" >> "${categoryPath}/${dataPath}/${dataFilesJSfile}" 
+  echo "  currentRow.class = 'file-row ${className}';" >> "${categoryPath}/${dataPath}/${dataFilesJSfile}" 
   echo "  insertAllCells(currentRow);" >> "${categoryPath}/${dataPath}/${dataFilesJSfile}" 
   echo "} " >> "${categoryPath}/${dataPath}/${dataFilesJSfile}"
   

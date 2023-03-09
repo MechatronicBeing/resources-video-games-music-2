@@ -21,7 +21,7 @@ read -r MBfunctionsScriptsDirname findRelativePathScriptname  <<< $($currentScri
 #Create the call to the script later
 executeFindRelativePathScriptname="$currentScriptDir/$rootScriptsLevel/$MBfunctionsScriptsDirname/$findRelativePathScriptname"
 #Get the data values
-read -r dataPath dataFilesHeaderPrefix  dataFilesMDfile dataFilesHTMLfile dataFilesRawfile <<< $($currentScriptDir/$globalValuesScriptname "filesDataPath" "dataFilesHeaderPrefix" "dataFilesMDfile"  "dataFilesHTMLfile" "dataFilesRawfile")
+read -r dataPath dataFilesHeaderPrefix  dataFilesMDfile dataFilesHTMLfile dataFilesJSfile <<< $($currentScriptDir/$globalValuesScriptname "filesDataPath" "dataFilesHeaderPrefix" "dataFilesMDfile"  "dataFilesHTMLfile" "dataFilesJSfile")
 #Get the others values
 read -r targetDir pagesFilesMDFilename pagesFilesHTMLFilename <<< $($currentScriptDir/$globalValuesScriptname "pagesFilesTargetDir" "pagesFilesMDFilename" "pagesFilesHTMLFilename")
 
@@ -31,6 +31,10 @@ categoryPath=$($executeFindParentDirectoryScript "$currentScriptDir" "$rootScrip
 categoryName="${categoryPath##*/}"
 #Move one folder and save the rootPath for later !!!
 rootPath="${categoryPath%/*}"
+
+#the -RELATIVE- path used IN the final page [CALCULATED from the target dir]
+#Add one folder more : the root folder
+showedRelativeFinalTarget=$($executeFindRelativePathScriptname "$targetDir" 1)
 
 filenames=("$pagesFilesMDFilename" "$pagesFilesHTMLFilename")
 filesContent=("$dataFilesMDfile" "$dataFilesHTMLfile")
@@ -64,14 +68,14 @@ for (( i=0; i<${#filenames[@]}; i++)); do
     if [[ -d "$D" ]]; then
     
       #If the current loop is the html page
-      if [[ "${filenames[$i]}" == "$pagesFilesHTMLFilename" ]]; then
-        #HTML : Add a specific tbody, inside the table, for the directory
-        echo "  <tbody id=\"tb_$D_\"></tbody>" >> "$categoryPath/$targetDir/$pagesFilesHTMLFilename"
-        
-        #if the HEADER exist, append it to the md file
+      if [[ "${filenames[$i]}" == "$pagesFilesHTMLFilename" ]]; then        
+        #if the HEADER exist, append it to the file
         if [[ -f "$categoryPath/$dataPath/${dataFilesHeaderPrefix}${filesContent[$i]}" ]]; then
           cat "$categoryPath/$dataPath/${dataFilesHeaderPrefix}${filesContent[$i]}" >> "$categoryPath/$targetDir/${filenames[$i]}"
         fi
+        
+        #HTML : Add a specific tbody, inside the table, for the directory
+        echo "  <tbody id=\"tb_${D}_\">" >> "$categoryPath/$targetDir/$pagesFilesHTMLFilename"
       fi
       
       #If D folder IS the current category : show all the files
@@ -86,11 +90,18 @@ for (( i=0; i<${#filenames[@]}; i++)); do
           read -r line < "$D/$dataPath/${filesContent[$i]}"
           #remove the \r at the end (else, the line can be 'corrupted')
           line="${line%$'\r'}"
+          
+          #Add the line to the tbody
+          echo "$line" >> "$categoryPath/$targetDir/${filenames[$i]}"
+          
+          #Add a line with a button to load external data
+          functionNameInJS="${D//-/_}"
+          echo "<tr><td colspan='8'><input id=\"bt_load_$D_\" type=\"button\" value=\"LOAD DATA\" onclick=\"loadData('$showedRelativeFinalTarget/$D/$dataPath/$dataFilesJSfile', '${functionNameInJS}_writeData');\" /></td></tr>" >> "$categoryPath/$targetDir/${filenames[$i]}"
         else
           line=""
+          #Add the line to the tbody
+          echo "$line" >> "$categoryPath/$targetDir/${filenames[$i]}"
         fi
-        #Add the line to the tbody
-        echo "$line" >> "$categoryPath/$targetDir/${filenames[$i]}"
       fi
       
       #If the current loop is the html page
