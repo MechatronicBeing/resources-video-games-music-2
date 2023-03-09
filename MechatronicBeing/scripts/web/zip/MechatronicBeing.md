@@ -1,8 +1,10 @@
-﻿- **Title** : "Create pkZip files with javaScript"
+﻿- **Title** : zip
 - **Author** : pwasystem 
-- **License** : "The Unlicense"
-- **Website** : https://github.com/pwasystem/zip/  
-- **For** : @MechatronicBeing  
+- **Website** : https://github.com/pwasystem/  
+- **Description** : Create pkZip files with javaScript
+- **Source** : https://github.com/pwasystem/zip/  
+- **Type** : web-script
+- **License** : The Unlicense
 - **WARNING** : this library only merge the files, apply no compression on them !!!! The size will stay the same.
 - **Modifications** :  
   - adding a html "test" page.

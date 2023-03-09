@@ -1,7 +1,7 @@
 - **Author** : Alexander Ehlers ("tricksntraps")  
 - **License** : CC0 Public Domain Dedication  
 - **Website** : https://opengameart.org/users/tricksntraps  
-- **Sources** :  
+- **Sources** : https://opengameart.org/users/tricksntraps  
   * https://opengameart.org/content/free-music-pack  
   * https://opengameart.org/content/free-mixed-music-2  
   * https://opengameart.org/content/t-t-free-cyberpunk-pack  
@@ -10,5 +10,6 @@
   * https://opengameart.org/content/free-surrealdream-music-pack  
   * https://opengameart.org/content/free-rhythm-game-music-pack-1  
   * https://opengameart.org/content/free-rhythm-game-music-pack-2  
+- **Type** : music
 - **Modifications** :
   - music converted by MechatronicBeing

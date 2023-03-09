@@ -1,0 +1,5 @@
+echo "GIT Fetch local resources from remote"
+git --git-dir resources/.git fetch -v --progress "origin"
+git --git-dir resources-comics/.git fetch -v --progress "origin"
+git --git-dir resources-video-games-music-1/.git fetch -v --progress "origin"
+git --git-dir resources-video-games-music-2/.git fetch -v --progress "origin"

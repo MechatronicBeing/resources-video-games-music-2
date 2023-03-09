@@ -1,19 +1,20 @@
-﻿- **Title** : "GIF and PNG Images for Math Symbols"
+﻿- **Title** : GIF and PNG Images for Math Symbols
 - **Author** : Norman Megill
-- **Description**
-  > "a collection of 1179 bit-mapped, 12-point, transparent images of mathematical letters and symbols, suitable for display on a web page."
+- **Website** : https://us.metamath.org/index.html
+- **Description** : a collection of 1179 bit-mapped, 12-point, transparent images of mathematical letters and symbols, suitable for display on a web page.
+- **Type** : images
 - **License** : Public domain
   > This work was created by Norman Megill, who explicitly disclaims in perpetuity any copyright or other proprietary interest in this work, thereby granting it to the **public domain**.  
   > This means it may be used for any purpose whatsoever, with or without acknowledgement, commercial or non-commercial, including use in a separate or derivative copyrighted work.  
   > No warranty of any kind is expressed or implied.  
   > Any trademarks mentioned in this work belong to their respective owners and must be treated accordingly in any derivative work.  
   > see [LICENSE](LICENSE) for more information.  
-- **Website** : [http://us.metamath.org/symbols/symbols.html](http://us.metamath.org/symbols/symbols.html)
+- **Source** : http://us.metamath.org/symbols/symbols.html
 - **Properties** : 
   - 1 190 files
   - 320 Ko
   - no changes since : 30-Nov-2013
-- **Main files** : 
+- **Files** : 
   - [symbols.html](symbols.html)
   - [searchindex.html](searchindex.html)
   - [LICENSE](LICENSE)

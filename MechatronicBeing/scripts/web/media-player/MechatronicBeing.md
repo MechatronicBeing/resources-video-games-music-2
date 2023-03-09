@@ -1,10 +1,10 @@
-﻿- **Title** : "media-player"
-- **Author** : Jonathan Neal  
-- **Description**  
-  > "Media Player is a tiny, responsive, international, accessible, cross browser, easily customizable media player written in plain vanilla JavaScript."  
+﻿- **Title** : media-player
+- **Author** : Jonathan Neal 
+- **Website** : https://github.com/jonathantneal/   
+- **Description** : Media Player is a tiny, responsive, international, accessible, cross browser, easily customizable media player written in plain vanilla JavaScript.  
+- **Type** : web-script
 - **License** : CC0 "No Rights Reserved" license  
-- **Website** : https://github.com/jonathantneal/media-player  
-- **For** : @MechatronicBeing  
+- **Source** : https://github.com/jonathantneal/media-player  
 - **Modifications** :  
   - using the "gh-pages" branch (https://github.com/jonathantneal/media-player/tree/gh-pages)  
     - original files : "media-player.css" and "media-player.js"  

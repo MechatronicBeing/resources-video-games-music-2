@@ -1,0 +1,46 @@
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+.file-link {
+  text-decoration: none; 
+  border-spacing: 0;
+}
+
+.file-link-element {
+  display: table-cell; 
+  vertical-align: middle;
+}
+
+.file-icon {
+  height: 22px;
+}
+
+.file-row {
+  cursor: pointer;
+}
+
+.file-row:hover td {
+  background-color: #ADDFFF;
+}
+
+.even {
+  background-color: #FFFFFF;
+}
+
+.odd {
+  background-color: #F0F0F0;
+}
+
+.file-cell-text {
+  text-align: left;
+}
+
+.file-cell-number {
+  text-align: right;
+}
+
+.file-selector {
+  disabled = true;
+}
